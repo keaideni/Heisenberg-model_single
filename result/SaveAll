@@ -1,0 +1,290 @@
+==============build up================
+1
+Q=   2,  WaveD=      10,  OS= 1,  OE=20,  E=                -3,  trace =                 1,  truncerr=                   0
+2
+Q=   4,  WaveD=      72,  OS= 2,  OE=19,  E= -6.24603675276863,  trace =                 1,  truncerr=                   0
+3
+Q=   6,  WaveD=     546,  OS= 3,  OE=18,  E= -9.22609165352483,  trace =                 1,  truncerr=0.000144574693949018
+4
+Q=   8,  WaveD=     700,  OS= 4,  OE=17,  E= -12.1203931100825,  trace =  1.00000000000001,  truncerr=0.000724959450804419
+5
+Q=  10,  WaveD=     741,  OS= 5,  OE=16,  E=  -14.959823269318,  trace =                 1,  truncerr=0.000781018706136338
+6
+Q=  12,  WaveD=     700,  OS= 6,  OE=15,  E= -17.7737187237172,  trace =                 1,  truncerr=0.000941336248348246
+7
+Q=  14,  WaveD=     700,  OS= 7,  OE=14,  E= -20.5692957908688,  trace = 0.999999999999993,  truncerr=0.000784681119826103
+8
+Q=  16,  WaveD=     700,  OS= 8,  OE=13,  E= -23.3579621257144,  trace =  1.00000000000001,  truncerr=0.000778162693341411
+9
+Q=  18,  WaveD=     700,  OS= 9,  OE=12,  E= -26.1420870916384,  trace = 0.999999999999998,  truncerr=0.000716289196815323
+===========build up finished============
+The build up process takes 0.464271 seconds!
+The eigenstate calculation takes 0.397386 seconds!
+===============Sweep================
+the 1th Sweep
+Q=20,  E =  -25.7670265561393
+  OS= 9,  OE=12  OrbitalM =10,  OrbitalN=10,  trace=  1.00000000000004,  truncerr=7.25123970808372e-05
+
+Q=20,  E =   -25.887808517143
+  OS=10,  OE=13  OrbitalM =10,  OrbitalN=11,  trace=  1.00000000000006,  truncerr=0.000300450097212246
+
+Q=20,  E =  -25.9854307433666
+  OS=11,  OE=14  OrbitalM =11,  OrbitalN=11,  trace= 0.999999999999989,  truncerr=0.000374077875682555
+
+Q=20,  E =  -26.0886868299561
+  OS=12,  OE=15  OrbitalM =11,  OrbitalN=12,  trace=  1.00000000000004,  truncerr=0.000359191535186043
+
+Q=20,  E =  -26.2369903491903
+  OS=13,  OE=16  OrbitalM =12,  OrbitalN=12,  trace=  1.00000000000005,  truncerr=0.000389624114809028
+
+Q=20,  E =  -26.3067528773388
+  OS=14,  OE=17  OrbitalM =12,  OrbitalN=13,  trace= 0.999999999999872,  truncerr= 0.00030628641286834
+
+Q=20,  E =  -26.3888002934418
+  OS=15,  OE=18  OrbitalM =13,  OrbitalN=13,  trace=  1.00000000000003,  truncerr=  0.0003103403625343
+
+Q=20,  E =  -26.3867507075789
+  OS=16,  OE=19  OrbitalM =13,  OrbitalN=14,  trace=  1.00000000000001,  truncerr=                   0
+
+Q=20,  E =  -26.8049125027219
+  OS=17,  OE=20  OrbitalM =14,  OrbitalN=14,  trace=  1.00000000000002,  truncerr=                   0
+
+the 2th Sweep
+Q=20,  E =  -26.8049125027219
+  OS=17,  OE=20  OrbitalM =14,  OrbitalN=14,  trace=  1.00000000000002,  truncerr=                   0
+
+Q=20,  E =  -26.8577552562286
+  OS=16,  OE=19  OrbitalM =13,  OrbitalN=14,  trace=  0.99999999999995,  truncerr=9.62152281832607e-05
+
+Q=20,  E =   -26.865536076698
+  OS=15,  OE=18  OrbitalM =13,  OrbitalN=13,  trace=  1.00000000000003,  truncerr= 0.00037259206049467
+
+Q=20,  E =  -26.8815184346397
+  OS=14,  OE=17  OrbitalM =12,  OrbitalN=13,  trace=  1.00000000000007,  truncerr= 0.00047732721291327
+
+Q=20,  E =  -26.8856815666048
+  OS=13,  OE=16  OrbitalM =12,  OrbitalN=12,  trace=  1.00000000000004,  truncerr=0.000567962871521721
+
+Q=20,  E =  -26.8908523234167
+  OS=12,  OE=15  OrbitalM =11,  OrbitalN=12,  trace= 0.999999999999966,  truncerr= 0.00062705632821547
+
+Q=20,  E =  -26.8973079260922
+  OS=11,  OE=14  OrbitalM =11,  OrbitalN=11,  trace=  1.00000000000002,  truncerr=  0.0006438889959276
+
+Q=20,  E =    -26.90513570118
+  OS=10,  OE=13  OrbitalM =10,  OrbitalN=11,  trace=  1.00000000000009,  truncerr=0.000786203345796821
+
+Q=20,  E =  -26.9113769390736
+  OS= 9,  OE=12  OrbitalM =10,  OrbitalN=10,  trace=  1.00000000000003,  truncerr= 0.00084030360237497
+
+Q=20,  E =  -26.9938004742028
+  OS= 8,  OE=11  OrbitalM =10,  OrbitalN= 9,  trace=  1.00000000000003,  truncerr=0.000715445126901915
+
+Q=20,  E =  -27.0724471270627
+  OS= 7,  OE=10  OrbitalM = 9,  OrbitalN= 9,  trace=  1.00000000000001,  truncerr=0.000700452659035511
+
+Q=20,  E =  -27.1552386586852
+  OS= 6,  OE= 9  OrbitalM = 9,  OrbitalN= 8,  trace=  1.00000000000014,  truncerr=0.000590521629910246
+
+Q=20,  E =  -27.2736491992047
+  OS= 5,  OE= 8  OrbitalM = 8,  OrbitalN= 8,  trace=  1.00000000000008,  truncerr= 0.00058445768478832
+
+Q=20,  E =  -27.3360732811547
+  OS= 4,  OE= 7  OrbitalM = 8,  OrbitalN= 7,  trace=  1.00000000000016,  truncerr=0.000372478854788971
+
+Q=20,  E =  -27.4150468210946
+  OS= 3,  OE= 6  OrbitalM = 7,  OrbitalN= 7,  trace= 0.999999999999859,  truncerr=0.000379559259921169
+
+Q=20,  E =  -27.4125852544212
+  OS= 2,  OE= 5  OrbitalM = 7,  OrbitalN= 6,  trace=  1.00000000000003,  truncerr=                   0
+
+Q=20,  E =   -27.823840291956
+  OS= 1,  OE= 4  OrbitalM = 6,  OrbitalN= 6,  trace=  0.99999999999996,  truncerr=                   0
+
+the 3th Sweep
+Q=20,  E =   -27.823840291956
+  OS= 1,  OE= 4  OrbitalM = 6,  OrbitalN= 6,  trace= 0.999999999999959,  truncerr=                   0
+
+Q=20,  E =  -27.8753466558459
+  OS= 2,  OE= 5  OrbitalM = 7,  OrbitalN= 6,  trace=  1.00000000000005,  truncerr= 9.7220850541202e-05
+
+Q=20,  E =  -27.8828755532034
+  OS= 3,  OE= 6  OrbitalM = 7,  OrbitalN= 7,  trace=                 1,  truncerr=0.000369653879903287
+
+Q=20,  E =  -27.8959862891685
+  OS= 4,  OE= 7  OrbitalM = 8,  OrbitalN= 7,  trace= 0.999999999999807,  truncerr=0.000454390422263473
+
+Q=20,  E =  -27.9022710671758
+  OS= 5,  OE= 8  OrbitalM = 8,  OrbitalN= 8,  trace= 0.999999999999984,  truncerr=0.000431558442966384
+
+Q=20,  E =  -27.9172439259142
+  OS= 6,  OE= 9  OrbitalM = 9,  OrbitalN= 8,  trace=  1.00000000000003,  truncerr=0.000420975452103733
+
+Q=20,  E =  -27.9311899964356
+  OS= 7,  OE=10  OrbitalM = 9,  OrbitalN= 9,  trace=  1.00000000000003,  truncerr=0.000418006159017104
+
+Q=20,  E =  -27.9456231950952
+  OS= 8,  OE=11  OrbitalM =10,  OrbitalN= 9,  trace=  1.00000000000003,  truncerr=0.000369705841494872
+
+Q=20,  E =  -27.9686096367506
+  OS= 9,  OE=12  OrbitalM =10,  OrbitalN=10,  trace=  1.00000000000002,  truncerr=0.000416243589390519
+
+Q=20,  E =  -27.9722136629468
+  OS=10,  OE=13  OrbitalM =10,  OrbitalN=11,  trace=  1.00000000000007,  truncerr=0.000446023504499404
+
+Q=20,  E =  -27.9750246878598
+  OS=11,  OE=14  OrbitalM =11,  OrbitalN=11,  trace=  1.00000000000002,  truncerr=0.000440514098719813
+
+Q=20,  E =  -27.9767018498402
+  OS=12,  OE=15  OrbitalM =11,  OrbitalN=12,  trace=  1.00000000000006,  truncerr=0.000471141836299038
+
+Q=20,  E =  -27.9777170626722
+  OS=13,  OE=16  OrbitalM =12,  OrbitalN=12,  trace= 0.999999999999984,  truncerr=0.000463130843368242
+
+Q=20,  E =  -27.9781548481453
+  OS=14,  OE=17  OrbitalM =12,  OrbitalN=13,  trace=  1.00000000000004,  truncerr=0.000453349837342354
+
+Q=20,  E =  -27.9785807949616
+  OS=15,  OE=18  OrbitalM =13,  OrbitalN=13,  trace= 0.999999999999972,  truncerr=0.000417957051159656
+
+Q=20,  E =  -27.9767208109154
+  OS=16,  OE=19  OrbitalM =13,  OrbitalN=14,  trace=  1.00000000000003,  truncerr=9.91644740051534e-05
+
+Q=20,  E =  -27.9758743308389
+  OS=17,  OE=20  OrbitalM =14,  OrbitalN=14,  trace= 0.999999999999998,  truncerr=                   0
+
+the 4th Sweep
+Q=20,  E =  -27.9758743308389
+  OS=17,  OE=20  OrbitalM =14,  OrbitalN=14,  trace= 0.999999999999998,  truncerr=                   0
+
+Q=20,  E =  -27.9767208109154
+  OS=16,  OE=19  OrbitalM =13,  OrbitalN=14,  trace= 0.999999999999996,  truncerr=9.91644749053222e-05
+
+Q=20,  E =  -27.9786157611474
+  OS=15,  OE=18  OrbitalM =13,  OrbitalN=13,  trace= 0.999999999999985,  truncerr= 0.00041813945401592
+
+Q=20,  E =  -27.9787428964399
+  OS=14,  OE=17  OrbitalM =12,  OrbitalN=13,  trace= 0.999999999999984,  truncerr=0.000453962215648529
+
+Q=20,  E =  -27.9788217252569
+  OS=13,  OE=16  OrbitalM =12,  OrbitalN=12,  trace=  1.00000000000003,  truncerr=0.000460486564863971
+
+Q=20,  E =   -27.978833914401
+  OS=12,  OE=15  OrbitalM =11,  OrbitalN=12,  trace= 0.999999999999988,  truncerr=0.000463126577092243
+
+Q=20,  E =  -27.9787711699323
+  OS=11,  OE=14  OrbitalM =11,  OrbitalN=11,  trace= 0.999999999999977,  truncerr=0.000438107992486558
+
+Q=20,  E =  -27.9788635314913
+  OS=10,  OE=13  OrbitalM =10,  OrbitalN=11,  trace=  1.00000000000002,  truncerr=0.000441624032390897
+
+Q=20,  E =  -27.9787355570361
+  OS= 9,  OE=12  OrbitalM =10,  OrbitalN=10,  trace=  1.00000000000003,  truncerr=0.000393579343890504
+
+Q=20,  E =  -27.9797712477065
+  OS= 8,  OE=11  OrbitalM =10,  OrbitalN= 9,  trace=  0.99999999999999,  truncerr=0.000439433286675173
+
+Q=20,  E =  -27.9801530184017
+  OS= 7,  OE=10  OrbitalM = 9,  OrbitalN= 9,  trace=  1.00000000000002,  truncerr=0.000438382013476901
+
+Q=20,  E =   -27.980703355025
+  OS= 6,  OE= 9  OrbitalM = 9,  OrbitalN= 8,  trace=  1.00000000000011,  truncerr=0.000462840883842297
+
+Q=20,  E =  -27.9813368760216
+  OS= 5,  OE= 8  OrbitalM = 8,  OrbitalN= 8,  trace=  1.00000000000006,  truncerr= 0.00046146105722078
+
+Q=20,  E =  -27.9814657105475
+  OS= 4,  OE= 7  OrbitalM = 8,  OrbitalN= 7,  trace=  1.00000000000002,  truncerr=0.000452172293515463
+
+Q=20,  E =   -27.981740266347
+  OS= 3,  OE= 6  OrbitalM = 7,  OrbitalN= 7,  trace=                 1,  truncerr= 0.00041759427438115
+
+Q=20,  E =  -27.9798619875306
+  OS= 2,  OE= 5  OrbitalM = 7,  OrbitalN= 6,  trace=  1.00000000000002,  truncerr= 9.9155327771272e-05
+
+Q=20,  E =  -27.9790155809225
+  OS= 1,  OE= 4  OrbitalM = 6,  OrbitalN= 6,  trace=  1.00000000000001,  truncerr=                   0
+
+the 5th Sweep
+Q=20,  E =  -27.9790155809225
+  OS= 1,  OE= 4  OrbitalM = 6,  OrbitalN= 6,  trace=  1.00000000000001,  truncerr=                   0
+
+Q=20,  E =  -27.9798619875306
+  OS= 2,  OE= 5  OrbitalM = 7,  OrbitalN= 6,  trace=                 1,  truncerr=9.91553281425306e-05
+
+Q=20,  E =  -27.9817544788746
+  OS= 3,  OE= 6  OrbitalM = 7,  OrbitalN= 7,  trace=  1.00000000000002,  truncerr=0.000417658640329166
+
+Q=20,  E =  -27.9818790601897
+  OS= 4,  OE= 7  OrbitalM = 8,  OrbitalN= 7,  trace=  1.00000000000002,  truncerr=0.000453168955169225
+
+Q=20,  E =   -27.981951118455
+  OS= 5,  OE= 8  OrbitalM = 8,  OrbitalN= 8,  trace=                 1,  truncerr=0.000458904451028586
+
+Q=20,  E =  -27.9819570536455
+  OS= 6,  OE= 9  OrbitalM = 9,  OrbitalN= 8,  trace=  1.00000000000002,  truncerr=0.000461976621222826
+
+Q=20,  E =  -27.9818778129276
+  OS= 7,  OE=10  OrbitalM = 9,  OrbitalN= 9,  trace=  1.00000000000002,  truncerr=0.000437760873789439
+
+Q=20,  E =  -27.9818892511134
+  OS= 8,  OE=11  OrbitalM =10,  OrbitalN= 9,  trace= 0.999999999999998,  truncerr=0.000437971176599383
+
+Q=20,  E =  -27.9817152311214
+  OS= 9,  OE=12  OrbitalM =10,  OrbitalN=10,  trace=                 1,  truncerr=0.000398643975388802
+
+Q=20,  E =  -27.9819226450812
+  OS=10,  OE=13  OrbitalM =10,  OrbitalN=11,  trace= 0.999999999999955,  truncerr=0.000438310205646775
+
+Q=20,  E =  -27.9819358130321
+  OS=11,  OE=14  OrbitalM =11,  OrbitalN=11,  trace=  1.00000000000004,  truncerr=0.000437491903891418
+
+Q=20,  E =  -27.9820376750091
+  OS=12,  OE=15  OrbitalM =11,  OrbitalN=12,  trace= 0.999999999999995,  truncerr=0.000461861464306601
+
+Q=20,  E =   -27.982050797938
+  OS=13,  OE=16  OrbitalM =12,  OrbitalN=12,  trace=  1.00000000000005,  truncerr=0.000458741478898461
+
+Q=20,  E =  -27.9819882508218
+  OS=14,  OE=17  OrbitalM =12,  OrbitalN=13,  trace=  1.00000000000004,  truncerr=0.000452849158058211
+
+Q=20,  E =   -27.981870262455
+  OS=15,  OE=18  OrbitalM =13,  OrbitalN=13,  trace=  1.00000000000004,  truncerr=0.000417518239789305
+
+Q=20,  E =  -27.9799791184945
+  OS=16,  OE=19  OrbitalM =13,  OrbitalN=14,  trace= 0.999999999999996,  truncerr=9.91518937795144e-05
+
+Q=20,  E =  -27.9791327414852
+  OS=17,  OE=20  OrbitalM =14,  OrbitalN=14,  trace=  1.00000000000001,  truncerr=                   0
+
+the 6th Sweep
+Q=20,  E =  -27.9791327414852
+  OS=17,  OE=20  OrbitalM =14,  OrbitalN=14,  trace=  1.00000000000001,  truncerr=                   0
+
+Q=20,  E =  -27.9799791184945
+  OS=16,  OE=19  OrbitalM =13,  OrbitalN=14,  trace=  1.00000000000001,  truncerr=9.91518949567949e-05
+
+Q=20,  E =  -27.9818709118164
+  OS=15,  OE=18  OrbitalM =13,  OrbitalN=13,  trace=  0.99999999999999,  truncerr=0.000417521618178096
+
+Q=20,  E =  -27.9819934766056
+  OS=14,  OE=17  OrbitalM =12,  OrbitalN=13,  trace=  1.00000000000002,  truncerr=0.000452827554372925
+
+Q=20,  E =  -27.9820626134695
+  OS=13,  OE=16  OrbitalM =12,  OrbitalN=12,  trace=  1.00000000000002,  truncerr= 0.00045867611249617
+
+Q=20,  E =  -27.9820580277552
+  OS=12,  OE=15  OrbitalM =11,  OrbitalN=12,  trace= 0.999999999999978,  truncerr=0.000461664012938345
+
+Q=20,  E =  -27.9819656338434
+  OS=11,  OE=14  OrbitalM =11,  OrbitalN=11,  trace=  1.00000000000003,  truncerr= 0.00043743913330363
+
+Q=20,  E =  -27.9819662684194
+  OS=10,  OE=13  OrbitalM =10,  OrbitalN=11,  trace= 0.999999999999985,  truncerr=0.000438113656830219
+
+Q=20,  E =  -27.9817730126327
+  OS= 9,  OE=12  OrbitalM =10,  OrbitalN=10,  trace= 0.999999999999976,  truncerr=0.000398303596223948
+
+===========Sweep finished==============
+The build up process takes 2.71321 seconds!
+The eigenstate calculation takes 2.340953 seconds!

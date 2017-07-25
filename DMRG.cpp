@@ -486,6 +486,7 @@ void DMRG::getEnergySweepP(Parameter& para, int dir)
 {
 
 
+
         int qtot = para.ParticleNo();
         double trace;
         double truncerr;

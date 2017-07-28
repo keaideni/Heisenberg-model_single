@@ -165,7 +165,7 @@ void OP::show()const
         cout<<"==========The Matrix:=========="<<endl;
         for(auto it=_QMat.begin(); it!=_QMat.end(); ++it)
         {
-                cout<<it->first<<"  =>"<<endl<<it->second<<endl;
+                cout<<it->first<<"  =>"<<endl<<it->second.rows()<<"x"<<it->second.cols()<<endl;
         }
 }
 

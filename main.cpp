@@ -9,7 +9,7 @@ int main()
         Parameter para;//(40, 40, 200, 6);
         para.read();
 
-        OP::Max=para.D();
+        OP::Max=para.ParticleNo();
 
         DMRG Heisenberg(para);
 }

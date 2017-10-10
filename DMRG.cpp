@@ -164,7 +164,7 @@ void DMRG::getEnergyP(Parameter& para, int dir)
 
 
 
-        int qtot = Sys.Orbital()*2;
+        int qtot = (Sys.Orbital()+1)*2;
         //std::cout<<qtot<<std::endl;
         Super Sup(para, Sys, m, n, Env, qtot);
         //std::cout<<"hehe"<<std::endl;
@@ -341,7 +341,7 @@ void DMRG::SweepP(Parameter& para, int& OS, int& OE, int& dir)
                                         if(calnonestepEM == calntwostepEM)
                                         {
                                                 initwave.twostepEM(onewave, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye());
-                                                //initwave1.twostepEM(onewave1, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye());
+                                                initwave1.twostepEM(onewave1, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye());
                                                 //initwave2.twostepEM(onewave2, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye());
 
                                                 //fwave11.show();exit(true);
@@ -353,7 +353,7 @@ void DMRG::SweepP(Parameter& para, int& OS, int& OE, int& dir)
                                         {
                                                 //ffwave.show();
                                                 initwave.twostepEN(onewave, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye());
-                                                //initwave1.twostepEN(onewave1, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye());
+                                                initwave1.twostepEN(onewave1, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye());
                                                 //initwave2.twostepEN(onewave2, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye());
 
                                                 //fwave11.show();exit(true);
@@ -466,15 +466,18 @@ void DMRG::SweepP(Parameter& para, int& OS, int& OE, int& dir)
 
         Fdata << "Q = " << para.ParticleNo() << "    LatticeSize = " << std::setw(4) << para.LatticeSize() 
                 << ",    E = " << std::setprecision(15) << Energy
+                << ",    DiffE = " << std::setprecision(15) << FAdd1Energy-FEnergy
                 << ",    trace = " << std::setprecision(15) 
                 << FTrace << ",    truncerr = " << std::setprecision(15) << FTruncerr 
                 << "              para.D = "<<std::setprecision(15)<<para.D()
                 <<"          Entanglment = "<<std::setprecision(15)<<FEntanglement<<std::endl;
         cout << "Q = " << para.ParticleNo() << "    LatticeSize = " << std::setw(4) << para.LatticeSize() 
                 << ",    E = " << std::setprecision(15) << Energy
+                << ",    DiffE = " << std::setprecision(15) << FAdd1Energy-FEnergy
                 << ",    trace = " << std::setprecision(15) 
                 << FTrace << ",    truncerr = " << std::setprecision(15) << FTruncerr 
                 << "              para.D = "<<std::setprecision(15)<<para.D()
+
                 <<"          Entanglment = "<<std::setprecision(15)<<FEntanglement<<std::endl;
         
         
@@ -497,7 +500,7 @@ void DMRG::getEnergySweepP(Parameter& para, int dir)
 
         Super Sup(para, Sys, m, n, Env, qtot);
         Super SupAdd1(para, Sys, m, n, Env, qtot+1);
-        Super SupAdd2(para, Sys, m, n, Env, qtot+2);
+        //Super SupAdd2(para, Sys, m, n, Env, qtot+2);
         //Sup.Wave.show();
 
         //if(caln != 0)
@@ -513,7 +516,7 @@ void DMRG::getEnergySweepP(Parameter& para, int dir)
         if(caln == 0)//(Sys.Orbital == (para.ParticleNo-1)))
         {
                 Supp.init(para, Sup);Energy = para.Energy;
-                //SuppAdd1.init(para, SupAdd1); Add1Energy=para.Energy;
+                SuppAdd1.init(para, SupAdd1); Add1Energy=para.Energy;
                 //SuppAdd2.init(para, SupAdd2); Add2Energy=para.Energy;
         }else
         {
@@ -522,14 +525,14 @@ void DMRG::getEnergySweepP(Parameter& para, int dir)
                 //std::cout<<"Sys.Orbital"<<Sys.Orbital<<std::endl;
                 
                 Supp.init(para, Sup, initwave);Energy = para.Energy;//exit(true); 
-                //SuppAdd1.init(para, SupAdd1, initwave1); Add1Energy=para.Energy;
+                SuppAdd1.init(para, SupAdd1, initwave1); Add1Energy=para.Energy;
                 //SuppAdd2.init(para, SupAdd2, initwave2); Add2Energy=para.Energy;
                  
 
         }
         saveT += difftime(clock(), begin) / CLOCKS_PER_SEC;
         startwave = Supp.wave;//temp now
-        //startwave1 = SuppAdd1.wave;
+        startwave1 = SuppAdd1.wave;
         //startwave2 = SuppAdd2.wave;
 
 
@@ -545,7 +548,7 @@ void DMRG::getEnergySweepP(Parameter& para, int dir)
         {
                 DenOPWave.getDenE(temp);
         }
-        /*DenOPWave.time(1.0/3);
+        DenOPWave.time(1.0/2);
 
 
         temp.clear();OP tempDen;
@@ -559,11 +562,11 @@ void DMRG::getEnergySweepP(Parameter& para, int dir)
                 tempDen.getDenE(temp);
         }
 
-        tempDen.time(1.0/3);
+        tempDen.time(1.0/2);
         DenOPWave.add(tempDen);
 
 
-        temp.clear();tempDen.clear();
+        /*temp.clear();tempDen.clear();
         //OP Dentemp;
         SuppAdd2.wave.Wave2OP(temp, Sys.SubSysEye(), m.SubSysEye(), n.SubSysEye(), Env.SubSysEye(), Gdir);
         if (dir == 1)
@@ -613,7 +616,7 @@ void DMRG::getEnergySweepP(Parameter& para, int dir)
         {
                 errEnergy=abs(Energy-FEnergy);
                 FEnergy = Energy;
-                //FAdd1Energy=Add1Energy;
+                FAdd1Energy=Add1Energy;
                 //FAdd2Energy=Add2Energy;
                 
                 FTrace = trace;
@@ -658,7 +661,7 @@ void DMRG::truncUpdateSweepP(const Parameter& para, int& OS, int& OE, int dir)
                         OP truncE;
                         truncE.truncread(OE);//truncE.show();
                         onewave.onestepSM(startwave, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye(), truncU, truncE);
-                        //onewave1.onestepSM(startwave1, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye(), truncU, truncE);
+                        onewave1.onestepSM(startwave1, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye(), truncU, truncE);
                         //onewave2.onestepSM(startwave2, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye(), truncU, truncE);
 
                         ++calnonestepSM;
@@ -676,7 +679,7 @@ void DMRG::truncUpdateSweepP(const Parameter& para, int& OS, int& OE, int dir)
                         OP truncE;
                         truncE.truncread(OE);//truncE.show();
                         onewave.onestepSN(startwave, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye(), truncU, truncE);
-                        //onewave1.onestepSN(startwave1, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye(), truncU, truncE);
+                        onewave1.onestepSN(startwave1, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye(), truncU, truncE);
                         //onewave2.onestepSN(startwave2, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye(), truncU, truncE);
 
                         ++calnonestepSN;
@@ -709,7 +712,7 @@ void DMRG::truncUpdateSweepP(const Parameter& para, int& OS, int& OE, int dir)
                         OP truncS;
                         truncS.truncread(OS);//truncE.show();
                         onewave.onestepEN(startwave, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye(), truncU, truncS);
-                        //onewave1.onestepEN(startwave1, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye(), truncU, truncS);
+                        onewave1.onestepEN(startwave1, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye(), truncU, truncS);
                         //onewave2.onestepEN(startwave2, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye(), truncU, truncS);
 
                         ++calnonestepEN;
@@ -729,7 +732,7 @@ void DMRG::truncUpdateSweepP(const Parameter& para, int& OS, int& OE, int dir)
                         OP truncS;
                         truncS.truncread(OS);//truncE.show();
                         onewave.onestepEM(startwave, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye(), truncU, truncS);
-                        //onewave1.onestepEM(startwave1, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye(), truncU, truncS);
+                        onewave1.onestepEM(startwave1, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye(), truncU, truncS);
                         //onewave2.onestepEM(startwave2, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye(), truncU, truncS);
 
                         ++calnonestepEM;

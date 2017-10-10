@@ -314,7 +314,7 @@ void DMRG::SweepP(Parameter& para, int& OS, int& OE, int& dir)
                                         {
                                                 //ffwave.show();
                                                 initwave.twostepSM(onewave, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye());
-                                                //initwave1.twostepSM(onewave1, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye());
+                                                initwave1.twostepSM(onewave1, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye());
                                                 //initwave2.twostepSM(onewave2, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye());
 
                                                 //fwave11.show();
@@ -326,7 +326,7 @@ void DMRG::SweepP(Parameter& para, int& OS, int& OE, int& dir)
                                         if(calnonestepSN == calntwostepSN)
                                         {
                                                 initwave.twostepSN(onewave, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye());
-                                                //initwave1.twostepSN(onewave1, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye());
+                                                initwave1.twostepSN(onewave1, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye());
                                                 //initwave2.twostepSN(onewave2, Sys.SubSysEye(), m.SubSysEye(), Env.SubSysEye(), n.SubSysEye());
 
                                                 //fwave11.show();exit(true);
@@ -466,13 +466,15 @@ void DMRG::SweepP(Parameter& para, int& OS, int& OE, int& dir)
 
         Fdata << "Q = " << para.ParticleNo() << "    LatticeSize = " << std::setw(4) << para.LatticeSize() 
                 << ",    E = " << std::setprecision(15) << Energy
+                << ",    E1 = " << std::setprecision(15) << FAdd1Energy
                 << ",    DiffE = " << std::setprecision(15) << FAdd1Energy-FEnergy
                 << ",    trace = " << std::setprecision(15) 
                 << FTrace << ",    truncerr = " << std::setprecision(15) << FTruncerr 
                 << "              para.D = "<<std::setprecision(15)<<para.D()
                 <<"          Entanglment = "<<std::setprecision(15)<<FEntanglement<<std::endl;
         cout << "Q = " << para.ParticleNo() << "    LatticeSize = " << std::setw(4) << para.LatticeSize() 
-                << ",    E = " << std::setprecision(15) << Energy
+                << ",    E = " << std::setprecision(15) << FEnergy
+                << ",    E1 = " << std::setprecision(15) << FAdd1Energy
                 << ",    DiffE = " << std::setprecision(15) << FAdd1Energy-FEnergy
                 << ",    trace = " << std::setprecision(15) 
                 << FTrace << ",    truncerr = " << std::setprecision(15) << FTruncerr 
@@ -513,8 +515,9 @@ void DMRG::getEnergySweepP(Parameter& para, int dir)
 
         begin = clock();
         SuperEnergy Supp, SuppAdd1, SuppAdd2;
-        if(caln == 0)//(Sys.Orbital == (para.ParticleNo-1)))
+        if((caln == 0)&(Sys.Orbital() == (para.ParticleNo()/2-1)))
         {
+                
                 Supp.init(para, Sup);Energy = para.Energy;
                 SuppAdd1.init(para, SupAdd1); Add1Energy=para.Energy;
                 //SuppAdd2.init(para, SupAdd2); Add2Energy=para.Energy;
@@ -600,6 +603,8 @@ void DMRG::getEnergySweepP(Parameter& para, int dir)
                 << ",    truncerr = " << std::setprecision(15) << truncerr << std::endl << std::endl;*/
 
         SaveAll << "Q=" << qtot << ",  E = " <<setw(18)<< std::setprecision(15)<<Energy <<std::endl
+        << ",    E1 = " << std::setprecision(15) << FAdd1Energy
+        << ",    DiffE = " << std::setprecision(15) << Add1Energy-Energy
         << "  OS="  <<std::setw(2)<<Sys.Orbital() << ",  OE=" <<std::setw(2)<< Env.Orbital()
         << "  OrbitalM ="  <<std::setw(2)<<OrbitalM << ",  OrbitalN=" <<std::setw(2)<< OrbitalN
         <<",  trace="<<setw(18)<< std::setprecision(15)<<trace
@@ -607,6 +612,8 @@ void DMRG::getEnergySweepP(Parameter& para, int dir)
 
 
         std::cout << "Q=" << qtot << ",  E = " <<setw(18)<< std::setprecision(15)<<Energy <<std::endl
+        << ",    E1 = " << std::setprecision(15) << FAdd1Energy
+        << ",    DiffE = " << std::setprecision(15) << Add1Energy-Energy
         << "  OS="  <<std::setw(2)<<Sys.Orbital() << ",  OE=" <<std::setw(2)<< Env.Orbital()
         << "  OrbitalM ="  <<std::setw(2)<<OrbitalM << ",  OrbitalN=" <<std::setw(2)<< OrbitalN
         <<",  trace="<<setw(18)<< std::setprecision(15)<<trace
